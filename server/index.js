@@ -5,7 +5,16 @@ dotenv.config();
 const app = express();
 const port = process.env.Port;
 
+
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+
+
 app.use("/",authRouter);
+
+
 
 app.listen(port,()=>{
     console.log("server started at : "+port);
