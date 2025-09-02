@@ -10,7 +10,7 @@ import LabProfile from "./screen/profile.jsx";
 import { useEffect } from "react";
 function App() {
   const { isAuthUser, check } = useAuthStore();
-  
+
   useEffect(() => {
     check();
   }, [check]);
@@ -19,21 +19,29 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<Navigate to="/" replace />} />
-        <Route path="/" element={isAuthUser ? <HomePage /> : <FrontPage />} />
+        <Route
+          path="/"
+          replace
+          element={isAuthUser ? <HomePage /> : <FrontPage />}
+        />
         <Route
           path="/login"
+          replace
           element={!isAuthUser ? <Login /> : <Navigate to="/home" />}
         />
         <Route
           path="/signup"
+          replace
           element={!isAuthUser ? <SignUp /> : <Navigate to="/home" />}
         />
         <Route
           path="/report"
+          replace
           element={isAuthUser ? <ReportPage /> : <Navigate to="/" />}
         />
         <Route
           path="/profile"
+          replace
           element={isAuthUser ? <LabProfile /> : <Navigate to="/" />}
         />
       </Routes>
