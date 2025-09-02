@@ -14,23 +14,22 @@ export default function FrontPage() {
         </div>
 
         <div className="flex gap-4">
-          <button
-            onClick={() => console.log("Login button clicked")}
-            className="px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-700 transition"
-          >
-            <Link to="/login" className="highlight">
-                Login
-              </Link>{" "}
-          </button>
-          <button
-            onClick={() => console.log("Sign Up button clicked")}
-            className="px-4 py-2 bg-green-600 rounded-xl hover:bg-green-700 transition"
-          >
-             <Link to="/signup" className="highlight">
-                Sign Up
-              </Link>{" "}
-            
-          </button>
+          <Link to="/login" className="highlight">
+            <button
+              onClick={() => console.log("Login button clicked")}
+              className="px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-700 transition"
+            >
+              Login
+            </button>
+          </Link>{" "}
+          <Link to="/signup" className="highlight">
+            <button
+              onClick={() => console.log("Sign Up button clicked")}
+              className="px-4 py-2 bg-green-600 rounded-xl hover:bg-green-700 transition"
+            >
+              Sign Up
+            </button>
+          </Link>{" "}
         </div>
       </nav>
 
@@ -49,12 +48,14 @@ export default function FrontPage() {
           We make creating reports and managing data effortless, secure, and
           professional.
         </p>
+        <Link to="/signup" className="highlight">
         <button
           onClick={() => console.log("Get Started button clicked")}
           className="px-6 py-3 bg-blue-600 text-lg rounded-xl hover:bg-blue-700 transition"
         >
           Get Started
         </button>
+          </Link>{" "}
       </main>
 
       {/* Footer Section */}

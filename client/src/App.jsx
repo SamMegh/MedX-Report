@@ -12,7 +12,7 @@ const {isAuthUser}=useAuthStore();
     <Routes>
       <Route path='/' element={!isAuthUser?<FrontPage/>:<Navigate to="/home"/>}/>
       <Route path='/home' element={isAuthUser?<HomePage/>:<Navigate to="/"/>}/>
-      <Route path='/login' element={isAuthUser?<Login/>:<Navigate to="/home"/>}/>
+      <Route path='/login' element={!isAuthUser?<Login/>:<Navigate to="/home"/>}/>
       <Route path='/signup' element={!isAuthUser?<SignUp/>:<Navigate to="/home"/>}/>
     </Routes>
     </BrowserRouter>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function SignUp() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
- const {signup} = useAuthStore();
+  const { signup } = useAuthStore();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -17,7 +17,7 @@ export default function SignUp() {
       return;
     }
     setError("");
-    signup(form)
+    signup(form);
   };
 
   return (
@@ -85,15 +85,14 @@ export default function SignUp() {
         {/* Back to Login */}
         <div className="mt-6 text-center">
           <p className="text-gray-400 text-sm">Already have an account?</p>
-          <button
-            onClick={() => alert("Redirect to Login Page")}
-            className="mt-2 w-full py-2 px-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
-          >
-            <Link to="/login" className="highlight">
-                Back to Login
-              </Link>{" "}
-            
-          </button>
+          <Link to="/login" replace className="highlight">
+            <button
+              onClick={() => alert("Redirect to Login Page")}
+              className="mt-2 w-full py-2 px-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
+            >
+              Back to Login
+            </button>
+          </Link>{" "}
         </div>
       </div>
     </div>

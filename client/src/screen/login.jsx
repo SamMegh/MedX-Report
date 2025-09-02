@@ -5,20 +5,20 @@ import { useAuthStore } from "../store/useAuthStore";
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
-  const {login} = useAuthStore();
+  const { login } = useAuthStore();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.email || !form.password) {
       setError("Both fields are required.");
       return;
     }
     setError("");
-    await login(form)
+    await login(form);
   };
 
   return (
@@ -72,15 +72,14 @@ export default function Login() {
         {/* Sign Up Section */}
         <div className="mt-6 text-center">
           <p className="text-gray-400 text-sm">Don’t have an account?</p>
-          <button
-            onClick={() => alert("Redirect to Sign Up Page")}
-            className="mt-2 w-full py-2 px-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition"
-          >
-            <Link to="/signup" className="highlight">
-                Create New Account
-              </Link>{" "}
-            
-          </button>
+          <Link to="/signup" replace className="highlight">
+            <button
+              onClick={() => alert("Redirect to Sign Up Page")}
+              className="mt-2 w-full py-2 px-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition"
+            >
+              Create New Account
+            </button>
+          </Link>{" "}
         </div>
       </div>
     </div>
