@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -88,7 +89,10 @@ export default function SignUp() {
             onClick={() => alert("Redirect to Login Page")}
             className="mt-2 w-full py-2 px-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
           >
-            Back to Login
+            <Link to="/login" className="highlight">
+                Back to Login
+              </Link>{" "}
+            
           </button>
         </div>
       </div>

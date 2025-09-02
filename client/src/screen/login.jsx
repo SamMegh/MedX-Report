@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 
 export default function Login() {
@@ -75,7 +76,10 @@ export default function Login() {
             onClick={() => alert("Redirect to Sign Up Page")}
             className="mt-2 w-full py-2 px-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition"
           >
-            Create New Account
+            <Link to="/signup" className="highlight">
+                Create New Account
+              </Link>{" "}
+            
           </button>
         </div>
       </div>
