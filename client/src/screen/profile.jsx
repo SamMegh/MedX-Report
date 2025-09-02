@@ -18,9 +18,11 @@ export default function LabProfile() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white px-6 py-10">
-      {/* Navbar */}
+    <div className="main">
+        {/* Navbar */}
       <NavBar />
+    <div className="min-h-screen bg-gray-900 text-white px-6 py-10">
+      
 
       {/* Profile Header */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 bg-gray-800 rounded-2xl p-8 shadow-md">
@@ -58,6 +60,7 @@ export default function LabProfile() {
           <p className="text-gray-400 mt-1">Completed Tests</p>
         </div>
       </div>
+    </div>
     </div>
   );
 }
