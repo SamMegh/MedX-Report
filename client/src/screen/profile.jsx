@@ -34,7 +34,6 @@ export default function LabProfile() {
             <p>Address: {lab.address}</p>
           </div>
           <button
-            onClick={() => console.log("Edit Lab Profile clicked")}
             className="mt-4 px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-700 transition"
           >
             Edit Profile

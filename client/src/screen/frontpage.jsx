@@ -16,7 +16,6 @@ export default function FrontPage() {
         <div className="flex gap-4">
           <Link to="/login" className="highlight">
             <button
-              onClick={() => console.log("Login button clicked")}
               className="px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-700 transition"
             >
               Login
@@ -24,7 +23,6 @@ export default function FrontPage() {
           </Link>{" "}
           <Link to="/signup" className="highlight">
             <button
-              onClick={() => console.log("Sign Up button clicked")}
               className="px-4 py-2 bg-green-600 rounded-xl hover:bg-green-700 transition"
             >
               Sign Up
@@ -50,7 +48,6 @@ export default function FrontPage() {
         </p>
         <Link to="/signup" className="highlight">
         <button
-          onClick={() => console.log("Get Started button clicked")}
           className="px-6 py-3 bg-blue-600 text-lg rounded-xl hover:bg-blue-700 transition"
         >
           Get Started

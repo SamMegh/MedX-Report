@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Navigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
+import NavBar from "../components/navbar";
 
 export default function HomePage() {
   const {check} = useAuthStore();
@@ -10,43 +10,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-white">
       {/* Navbar */}
-      <nav className="w-full bg-gray-800 shadow-md px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <img
-            src="/logo.png" // 👉 replace with your logo path
-            alt="Company Logo"
-            className="w-10 h-10 rounded-full"
-          />
-          <span className="text-xl font-bold">MyCompany</span>
-        </div>
-
-        <div className="flex gap-6">
-          <button
-            onClick={() => <Navigate to="/home"/>}
-            className="hover:text-blue-400 transition"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => <Navigate to="/report"/>}
-            className="hover:text-blue-400 transition"
-          >
-            Reports
-          </button>
-          <button
-            onClick={() => <Navigate to="/profile"/>}
-            className="hover:text-blue-400 transition"
-          >
-            Profile
-          </button>
-          <button
-            onClick={() => console.log("Logout clicked")}
-            className="hover:text-red-400 transition"
-          >
-            Logout
-          </button>
-        </div>
-      </nav>
+      <NavBar/>
 
       {/* Hero / Welcome Section */}
       <header className="flex-1 flex flex-col items-center justify-center text-center px-6 relative">
@@ -58,7 +22,6 @@ export default function HomePage() {
           check analytics, and explore new features we’ve built for you.
         </p>
         <button
-          onClick={() => console.log("Explore Features clicked")}
           className="px-6 py-3 bg-blue-600 text-lg rounded-xl hover:bg-blue-700 transition"
         >
           Explore Features

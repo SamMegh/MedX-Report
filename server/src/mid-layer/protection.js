@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import User from '../DB-Model/user.model';
+import User from '../DB-Model/user.model.js';
 
 export default async function Protection(req, res, next) {
     try {
