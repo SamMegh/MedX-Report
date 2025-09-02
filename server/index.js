@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import authRouter from "./src/routes/auth.route.js"
+import authRouter from "./src/Routes/auth.route.js"
+import cookieParser from 'cookie-parser'
 import { connectToDB } from './src/lib/monos.db.connection.js';
 import cors from 'cors';
 
@@ -14,6 +15,7 @@ const ClientOrigin= process.env.ClientOriginUrl
 console.log(ClientOrigin);
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(cookieParser());
 
 app.use(cors({
     origin:ClientOrigin,

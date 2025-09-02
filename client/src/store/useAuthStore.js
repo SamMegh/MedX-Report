@@ -25,7 +25,7 @@ export const useAuthStore = create((set) => ({
 
     check: async () => {
         try {
-            const res = await Instance.post("/check");
+            const res = await Instance.get("/check");
             console.log(res.data)
             set({ isAuthUser: res.data });
         } catch (error) {

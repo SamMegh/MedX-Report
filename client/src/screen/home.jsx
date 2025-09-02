@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import { useAuthStore } from "../store/useAuthStore";
+
 export default function HomePage() {
+  const {check} = useAuthStore();
+  useEffect(()=>{
+    check();
+  },[check])
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-white">
       {/* Navbar */}
@@ -14,13 +22,19 @@ export default function HomePage() {
 
         <div className="flex gap-6">
           <button
-            onClick={() => console.log("Dashboard clicked")}
+            onClick={() => <Navigate to="/home"/>}
             className="hover:text-blue-400 transition"
           >
-            Dashboard
+            Home
           </button>
           <button
-            onClick={() => console.log("Profile clicked")}
+            onClick={() => <Navigate to="/report"/>}
+            className="hover:text-blue-400 transition"
+          >
+            Reports
+          </button>
+          <button
+            onClick={() => <Navigate to="/profile"/>}
             className="hover:text-blue-400 transition"
           >
             Profile
