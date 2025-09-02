@@ -1,10 +1,10 @@
 import './App.css'
-import Login from './screen/login.jsx'
+import SignUp from './screen/signup.jsx'
 
 function App() {
 
   return (
-    <Login />
+    <SignUp />
   )
 }
 
