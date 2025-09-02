@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../components/navbar";
 
 // Example data (you can replace with real API data later)
 const reports = [
@@ -31,6 +32,8 @@ const reports = [
 export default function ReportPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white px-6 py-10">
+      {/* Navbar */}
+      <NavBar />
       <h1 className="text-3xl font-bold mb-8 text-center">Patient Reports</h1>
 
       {/* Reports Grid */}

@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../components/navbar";
 
 export default function LabProfile() {
   // Example lab data (replace with API later)
@@ -18,6 +19,9 @@ export default function LabProfile() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white px-6 py-10">
+      {/* Navbar */}
+      <NavBar />
+
       {/* Profile Header */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 bg-gray-800 rounded-2xl p-8 shadow-md">
         <img
@@ -33,9 +37,7 @@ export default function LabProfile() {
             <p>Phone: {lab.phone}</p>
             <p>Address: {lab.address}</p>
           </div>
-          <button
-            className="mt-4 px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-700 transition"
-          >
+          <button className="mt-4 px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-700 transition">
             Edit Profile
           </button>
         </div>
