@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../components/navbar";
 
-// Example data (you can replace with real API data later)
+// Example data (replace with real API later)
 const reports = [
   {
     id: "RPT001",
@@ -31,32 +31,38 @@ const reports = [
 
 export default function ReportPage() {
   return (
-    <div className="main">
-         {/* Navbar */}
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-teal-50 text-gray-900">
       <NavBar />
-    <div className="min-h-screen bg-gray-900 text-white px-6 py-10">
-     
-      <h1 className="text-3xl font-bold mb-8 text-center">Patient Reports</h1>
+      <div className="px-6 py-10 max-w-7xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900">
+          Patient Reports
+        </h1>
 
-      {/* Reports Grid */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {reports.map((report) => (
-          <div
-            key={report.id}
-            className="bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer"
-          >
-            <h2 className="text-xl font-semibold mb-2">{report.name}</h2>
-            <p className="text-gray-400 mb-1">
-              <span className="font-medium">Report:</span> {report.type}
-            </p>
-            <p className="text-gray-400 mb-2">
-              <span className="font-medium">ID:</span> {report.id}
-            </p>
-            <p className="text-gray-300">{report.description}</p>
-          </div>
-        ))}
+        {/* Reports Grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {reports.map((report) => (
+            <div
+              key={report.id}
+              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition cursor-pointer border border-gray-200"
+            >
+              <div className="flex items-center justify-between mb-4">
+
+              <h2 className="text-xl font-semibold mb-2 text-blue-800">
+                {report.name}
+              </h2>
+              <span className="text-gray-600 mb-1">{report.type}</span>
+              </div>
+
+              <p className="text-gray-600 mb-2">
+                <span className="font-medium">ID:</span> {report.id}
+              </p>
+
+              <p className="text-gray-700">{report.description}</p>
+
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

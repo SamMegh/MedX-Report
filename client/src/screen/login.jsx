@@ -23,70 +23,69 @@ export default function Login() {
   };
 
   return (
-    <div className="main">
-      <Loginnavbar/>
-    
-    <div className="h-screen flex items-center justify-center">
-      <div className="w-full max-w-md bg-gray-800 rounded-2xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-center text-white mb-6">
-          Login
-        </h2>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 flex flex-col">
+      {/* Navbar */}
+      <Loginnavbar />
 
-        {error && (
-          <p className="text-red-400 text-sm text-center mb-4">{error}</p>
-        )}
+      {/* Login Box */}
+      <div className="flex-1 flex items-center justify-center px-4">
+        <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+          <h2 className="text-3xl font-bold text-center text-blue-800 mb-6">
+            Doctor Lab Login
+          </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-gray-300 text-sm font-medium">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              className="w-full mt-1 px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              placeholder="Enter your email"
-            />
-          </div>
+          {error && (
+            <p className="text-red-500 text-sm text-center mb-4">{error}</p>
+          )}
 
-          <div>
-            <label className="block text-gray-300 text-sm font-medium">
-              Password
-            </label>
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              className="w-full mt-1 px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              placeholder="Enter your password"
-            />
-          </div>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="block text-gray-700 text-sm font-medium">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                className="w-full mt-1 px-4 py-2 bg-gray-50 text-gray-900 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                placeholder="doctor@medxlabs.com"
+              />
+            </div>
 
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
-          >
-            Login
-          </button>
-        </form>
+            <div>
+              <label className="block text-gray-700 text-sm font-medium">
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                className="w-full mt-1 px-4 py-2 bg-gray-50 text-gray-900 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                placeholder="Enter your password"
+              />
+            </div>
 
-        {/* Sign Up Section */}
-        <div className="mt-6 text-center">
-          <p className="text-gray-400 text-sm">Don’t have an account?</p>
-          <Link to="/signup" replace className="highlight">
             <button
-              onClick={() => alert("Redirect to Sign Up Page")}
-              className="mt-2 w-full py-2 px-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition"
+              type="submit"
+              className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white text-lg rounded-xl font-semibold hover:scale-[1.02] transition-transform shadow-md"
             >
-              Create New Account
+              Login
             </button>
-          </Link>{" "}
+          </form>
+
+          {/* Sign Up Section */}
+          <div className="mt-8 text-center">
+            <p className="text-gray-600 text-sm">Don’t have an account?</p>
+            <Link to="/signup" replace>
+              <button className="mt-3 w-full py-3 px-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white text-lg rounded-xl font-semibold hover:scale-[1.02] transition-transform shadow-md">
+                Create New Account
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
