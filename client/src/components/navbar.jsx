@@ -22,7 +22,7 @@ export default function Navbar() {
           alt="Company Logo"
           className="w-10 h-10 rounded-full"
         />
-        <span className="text-xl font-bold">MyCompany</span>
+        <span className="text-xl font-bold">MedX Report</span>
       </div>
 
       {/* Desktop Menu */}
