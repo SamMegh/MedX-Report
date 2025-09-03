@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { Link } from "react-router-dom";
+import Loginnavbar from "../components/loginnavbar";
 
 export default function SignUp() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
