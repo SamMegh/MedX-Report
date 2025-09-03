@@ -26,16 +26,16 @@ export const useAuthStore = create((set) => ({
     check: async () => {
         try {
             const res = await Instance.get("/check");
-            console.log(res.data)
             set({ isAuthUser: res.data });
         } catch (error) {
+            set({ isAuthUser: null });
             console.log("unable to login", error);
         }
     },
 
     logout: async () => {
         try {
-            await Instance.post("/logout");
+            await Instance.get("/logout");
             set({ isAuthUser: null });
         } catch (error) {
             console.log("unable to login", error);

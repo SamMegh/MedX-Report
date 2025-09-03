@@ -118,7 +118,7 @@ export default function Navbar() {
             onClick={() => {
               logout();
               setIsOpen(false);
-              navigate("/login");
+              navigate("/");
             }}
             className="hover:text-red-400 transition"
           >

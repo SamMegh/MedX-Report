@@ -21,6 +21,9 @@ export default function SignUp() {
   };
 
   return (
+        <div className="main">
+          <Loginnavbar/>
+        
     <div className="h-screen flex items-center justify-center bg-gray-900">
       <div className="w-full max-w-md bg-gray-800 rounded-2xl shadow-lg p-8">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
@@ -95,6 +98,7 @@ export default function SignUp() {
           </Link>{" "}
         </div>
       </div>
+    </div>
     </div>
   );
 }

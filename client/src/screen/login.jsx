@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
+import Loginnavbar from "../components/loginnavbar";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -22,6 +23,9 @@ export default function Login() {
   };
 
   return (
+    <div className="main">
+      <Loginnavbar/>
+    
     <div className="h-screen flex items-center justify-center">
       <div className="w-full max-w-md bg-gray-800 rounded-2xl shadow-lg p-8">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
@@ -82,6 +86,7 @@ export default function Login() {
           </Link>{" "}
         </div>
       </div>
+    </div>
     </div>
   );
 }
