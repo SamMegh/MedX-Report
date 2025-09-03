@@ -14,7 +14,7 @@ export default function Loginnavbar() {
           <span className="text-xl font-bold">MedX Report</span>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4"  replace="true">
           <Link to="/login" className="highlight">
             <button
               className="px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-700 transition"
@@ -22,7 +22,7 @@ export default function Loginnavbar() {
               Login
             </button>
           </Link>{" "}
-          <Link to="/signup" className="highlight">
+          <Link to="/signup" replace="true" className="highlight">
             <button
               className="px-4 py-2 bg-green-600 rounded-xl hover:bg-green-700 transition"
             >
