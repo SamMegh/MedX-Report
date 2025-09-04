@@ -12,54 +12,29 @@ export default function HomePage() {
 
   const [people, setPeople] = useState([
     {
-      id: 1,
+      id: "RPT001",
       name: "John Doe",
-      email: "john@example.com",
-      address: "123 Main Street",
-      city: "New York",
-      state: "NY",
-      zip: "10001",
-      terms: true,
-      country: "USA",
+      type: "Blood Report",
+      description: "Routine blood checkup showing normal levels.",
     },
     {
-      id: 2,
+      id: "RPT002",
       name: "Jane Smith",
-      email: "jane@example.com",
-      address: "456 Oak Avenue",
-      city: "Los Angeles",
-      state: "CA",
-      zip: "90001",
-      terms: false,
-      country: "USA",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
     },
     {
-      id: 3,
-      name: "Rahul Sharma",
-      email: "rahul@example.com",
-      address: "78 MG Road",
-      city: "Mumbai",
-      state: "MH",
-      zip: "400001",
-      terms: true,
-      country: "India",
+      id: "RPT003",
+      name: "Michael Brown",
+      type: "Urine Report",
+      description: "Urine analysis indicating minor infection.",
     },
-  ]);
-
-  const [search, setSearch] = useState("");
-
-  // Filtered data
-  const filteredPeople = people.filter((p) =>
-    Object.values(p).some((val) =>
-      String(val).toLowerCase().includes(search.toLowerCase())
-    )
-  );
-
-  const handleDelete = (id) => {
-    setPeople(people.filter((p) => p.id !== id));
-  };
-
-  const reports = [
+    {
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
+    },
     {
       id: "RPT001",
       name: "John Doe",
@@ -79,12 +54,97 @@ export default function HomePage() {
       description: "Urine analysis indicating minor infection.",
     },
     {
-      id: "RPT004",
-      name: "Alice Johnson",
-      type: "Blood Report",
-      description: "Vitamin levels slightly low, follow up recommended.",
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
     },
-  ];
+    {
+      id: "RPT001",
+      name: "John Doe",
+      type: "Blood Report",
+      description: "Routine blood checkup showing normal levels.",
+    },
+    {
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
+    },
+    {
+      id: "RPT003",
+      name: "Michael Brown",
+      type: "Urine Report",
+      description: "Urine analysis indicating minor infection.",
+    },
+    {
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
+    },
+    {
+      id: "RPT001",
+      name: "John Doe",
+      type: "Blood Report",
+      description: "Routine blood checkup showing normal levels.",
+    },
+    {
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
+    },
+    {
+      id: "RPT003",
+      name: "Michael Brown",
+      type: "Urine Report",
+      description: "Urine analysis indicating minor infection.",
+    },
+    {
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
+    },
+    {
+      id: "RPT001",
+      name: "John Doe",
+      type: "Blood Report",
+      description: "Routine blood checkup showing normal levels.",
+    },
+    {
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
+    },
+    {
+      id: "RPT003",
+      name: "Michael Brown",
+      type: "Urine Report",
+      description: "Urine analysis indicating minor infection.",
+    },
+    {
+      id: "RPT002",
+      name: "Jane Smith",
+      type: "X-Ray Report",
+      description: "Chest X-ray showing clear lungs.",
+    },
+  ]);
+
+  const [search, setSearch] = useState("");
+
+  // Filtered data
+  const filteredPeople = people.filter((p) =>
+    Object.values(p).some((val) =>
+      String(val).toLowerCase().includes(search.toLowerCase())
+    )
+  );
+
+  const handleDelete = (id) => {
+    setPeople(people.filter((p) => p.id !== id));
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
@@ -93,120 +153,71 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <header className="flex-1 min-h-auto py-32 flex flex-col items-center justify-center text-center px-6 bg-gradient-to-r from-blue-100 to-teal-100 ">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-          Welcome to <span className="text-teal-600">MedX Lab</span>
+        <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-10">
+          Welcome to <span className="text-teal-600">MedX Lab :</span> Current <span className="text-teal-600">Details</span>
         </h1>
-        <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white text-lg rounded-xl font-semibold shadow-md hover:scale-105 transition-transform">
+        <button className="px-8 py-3 bg-gradient-to-r cursor-pointer from-blue-600 to-teal-600 text-white text-lg rounded-xl font-semibold shadow-md hover:scale-105 transition-transform">
           View Latest Reports
         </button>
       </header>
 
       {/* Data Table Section */}
-      <div className=" bg-gradient-to-r from-blue-100 to-teal-100  flex items-center justify-center px-6 py-12">
-        <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-7xl">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            Address Details - Multiple People
-          </h2>
+      <div className="min-h-screen bg-gradient-to-r from-blue-200 to-teal-200  text-gray-900">
+        <div className="px-6 py-10 max-w-7xl mx-auto">
+          <h1 className="text-4xl md:text-5xl text-center font-bold text-blue-900 mb-10">
+            Patient <span className="text-teal-600">Details</span>
+          </h1>
 
           {/* Search Bar */}
           <input
             type="text"
-            placeholder="Search by name, email, city..."
+            placeholder="🔍 Search by name, email, city..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full mb-6 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            className="w-full mb-6 px-5 py-2 rounded-full bg-white focus:ring-0 appearance-none outline-none border-none  focus:shadow-lg shadow-gray-400 sh transition"
           />
-
-          {/* Table */}
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 rounded-lg overflow-hidden">
-              <thead className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-                <tr>
-                  <th className="py-3 px-4 text-left">Name</th>
-                  <th className="py-3 px-4 text-left">Email</th>
-                  <th className="py-3 px-4 text-left">Address</th>
-                  <th className="py-3 px-4 text-left">City</th>
-                  <th className="py-3 px-4 text-left">State</th>
-                  <th className="py-3 px-4 text-left">Zip</th>
-                  <th className="py-3 px-4 text-center">Terms</th>
-                  <th className="py-3 px-4 text-left">Country</th>
-                  <th className="py-3 px-4 text-center">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredPeople.length > 0 ? (
-                  filteredPeople.map((p) => (
-                    <tr
-                      key={p.id}
-                      className="border-b hover:bg-gray-100 transition"
-                    >
-                      <td className="py-3 px-4">{p.name}</td>
-                      <td className="py-3 px-4">{p.email}</td>
-                      <td className="py-3 px-4">{p.address}</td>
-                      <td className="py-3 px-4">{p.city}</td>
-                      <td className="py-3 px-4">{p.state}</td>
-                      <td className="py-3 px-4">{p.zip}</td>
-                      <td className="py-3 px-4 text-center">
-                        {p.terms ? "✅" : "❌"}
-                      </td>
-                      <td className="py-3 px-4">{p.country}</td>
-                      <td className="py-3 px-4 text-center space-x-2">
-                        <button className="px-3 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-                          Edit
-                        </button>
-                        <button
-                          onClick={() => handleDelete(p.id)}
-                          className="px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600"
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td
-                      colSpan="9"
-                      className="py-6 text-center text-gray-500 italic"
-                    >
-                      No matching records found.
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div className=" bg-gradient-to-r from-blue-100 to-teal-100  text-gray-900">
-        <div className="px-6 py-10 max-w-7xl mx-auto">
 
           {/* Reports Grid */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {reports.map((report) => (
-              <div
-                key={report.id}
-                className="bg-gradient-to-r to-blue-100 from-teal-100 relative rounded-2xl p-6 shadow-md hover:shadow-xl transition cursor-pointer border border-gray-200"
-              >
-                <div className="flex items-center justify-between mb-4">
+            {filteredPeople.length > 0 ? (
+              filteredPeople.map((p) => (
+                <div
+                  key={p.id}
+                  className="bg-gradient-to-r to-blue-100 from-teal-100 relative rounded-2xl p-6 shadow-md hover:shadow-xl transition cursor-pointer border border-gray-200"
+                >
+                  <div className="flex items-center justify-between mb-4">
 
-                  <h2 className="text-xl font-semibold mb-2 text-blue-800">
-                    {report.name}
-                  </h2>
+                    <h2 className="text-xl font-semibold mb-2 text-blue-800">
+                      {p.name}
+                    </h2>
 
-                  <span className=" absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-tr-2xl  rounded-bl-2xl ">{report.type}</span>
+                    <span onClick={() => {
+                      window.open("https://tourism.gov.in/sites/default/files/2019-04/dummy-pdf_2.pdf", "_blank");
+                    }} className=" absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-tr-2xl  rounded-bl-2xl ">{p.type}</span>
+                  </div>
+                  <p className="text-gray-700 mb-9">{p.description}</p>
+
+                  <span className="absolute bottom-0 left-0 bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-tr-2xl  rounded-bl-2xl">ID: {p.id}</span>
+                  <button
+                    onClick={() => handleDelete(p.id)}
+                    className="absolute bottom-0 right-0 bg-gradient-to-r from-blue-300 to-teal-300 text-black px-6 py-3 rounded-tl-2xl  rounded-br-2xl hover:bg-gradient-to-tl"
+                  >
+                    Delete
+                  </button>
+
                 </div>
-
-                <p className="text-gray-700 mb-9">{report.description}</p>
-
-                <span className="absolute bottom-0 left-0 bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-tr-2xl  rounded-bl-2xl">ID: {report.id}</span>
-
-              </div>
-            ))}
+              ))
+            ) : (
+              <tr>
+                <td
+                  colSpan="9"
+                  className="py-6 text-center text-gray-500 italic"
+                >
+                  No matching records found.
+                </td>
+              </tr>
+            )}
           </div>
-
-
 
         </div>
       </div>
