@@ -8,6 +8,7 @@ import SignUp from "./screen/signup.jsx";
 import ReportPage from "./screen/reports.jsx";
 import LabProfile from "./screen/profile.jsx";
 import { useEffect } from "react";
+import CreateReport from "./screen/createReport.jsx";
 function App() {
   const { isAuthUser, check } = useAuthStore();
 
@@ -21,7 +22,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route
           path="/"
-          element={!isAuthUser ? < FrontPage/> : <HomePage />}
+          element={!isAuthUser ? < FrontPage /> : <HomePage />}
         />
         <Route
           path="/login"
@@ -43,8 +44,13 @@ function App() {
           replace
           element={isAuthUser ? <LabProfile /> : <Navigate to="/" />}
         />
-      </Routes>
-    </BrowserRouter>
+      <Route
+        path="/CreateReport"
+        replace
+        element={isAuthUser ? <CreateReport /> : <Navigate to="/" />}
+      />
+    </Routes>
+  </BrowserRouter >
   );
 }
 

@@ -1,15 +1,11 @@
 import React from "react";
 import NavBar from "../components/navbar";
 import { useState } from "react";
-
-
-
-
-
+import { useNavigate } from "react-router-dom";
 
 export default function ReportPage() {
 
-
+  const navigate = useNavigate();
 
   // Example data (replace with real API later)
   const [people, setPeople] = useState([
@@ -59,6 +55,16 @@ export default function ReportPage() {
         <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900">
           Patient Reports
         </h1>
+        {/* Create New Report */}
+        <div className="max-w-2xl text-lg text-gray-700 mb-10 mx-auto gap-6 md:grid-cols-2 lg:grid-cols-3 flex flex-col md:flex-row items-center justify-center">
+          {/* Create New Report */}
+          <button
+            onClick={() => navigate("/CreateReport")}
+            className="px-8 py-3 bg-gradient-to-r cursor-pointer from-purple-600 to-pink-600 text-white text-lg rounded-xl font-semibold shadow-md hover:scale-105 transition-transform"
+          >
+            Create New Report
+          </button>
+        </div>
 
         {/* Search Bar */}
         <input

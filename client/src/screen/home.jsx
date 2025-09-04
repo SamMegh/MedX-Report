@@ -3,8 +3,13 @@ import { useAuthStore } from "../store/useAuthStore";
 import NavBar from "../components/navbar";
 import { ClipboardList, ShieldCheck, Users } from "lucide-react"; // icons
 
+import { useNavigate } from "react-router-dom";
+
+
 export default function HomePage() {
   const { check } = useAuthStore();
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     check();
@@ -156,9 +161,23 @@ export default function HomePage() {
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-10">
           Welcome to <span className="text-teal-600">MedX Lab :</span> Current <span className="text-teal-600">Details</span>
         </h1>
-        <button className="px-8 py-3 bg-gradient-to-r cursor-pointer from-blue-600 to-teal-600 text-white text-lg rounded-xl font-semibold shadow-md hover:scale-105 transition-transform">
-          View Latest Reports
-        </button>
+        <div className="max-w-2xl text-lg text-gray-700 mb-10 mx-auto gap-6 md:grid-cols-2 lg:grid-cols-3 flex flex-col md:flex-row items-center justify-center">
+          {/* View All Reports */}
+          <button
+            onClick={() => navigate("/report")}
+            className="px-8 py-3 bg-gradient-to-r cursor-pointer from-blue-600 to-teal-600 text-white text-lg rounded-xl font-semibold shadow-md hover:scale-105 transition-transform"
+          >
+            View All Reports
+          </button>
+
+          {/* Create New Report */}
+          <button
+            onClick={() => navigate("/CreateReport")}
+            className="px-8 py-3 bg-gradient-to-r cursor-pointer from-purple-600 to-pink-600 text-white text-lg rounded-xl font-semibold shadow-md hover:scale-105 transition-transform"
+          >
+            Create New Report
+          </button>
+        </div>
       </header>
 
       {/* Data Table Section */}
