@@ -50,6 +50,7 @@ export default function ReportPage() {
               <h2 className="text-xl font-semibold mb-2 text-blue-800">
                 {report.name}
               </h2>
+              
               <span className="text-gray-600 mb-1">{report.type}</span>
               </div>
 
