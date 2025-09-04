@@ -151,6 +151,25 @@ export default function HomePage() {
     setPeople(people.filter((p) => p.id !== id));
   };
 
+
+  const reports = [
+    "HIV Report",
+    "Blood Report",
+    "X-Ray Report",
+    "Urine Report",
+    "X-Ray Report",
+    "CT Scan Report",
+    "Lipid Profile",
+    "Liver Function Test",
+    "Kidney Function Test",
+    "Thyroid Panel",
+    "Allergy Test",
+    "Vitamin D Test",
+    "COVID Test",
+    "MRI Report",
+    "COVID Test"
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
       {/* Navbar */}
@@ -179,6 +198,32 @@ export default function HomePage() {
           </button>
         </div>
       </header>
+
+
+      <div className="bg-gradient-to-r from-blue-100 to-teal-100 py-10">
+        <div className="grid gap-6 md:grid-cols-3 w-7xl m-auto lg:grid-cols-5">
+
+          {reports.map((report, index) => (
+            <button
+              key={index}
+              onClick={() => navigate("/CreateReport")}
+              className="bg-gradient-to-r from-blue-400 to-teal-400 text-white px-6 py-3 rounded-tl-2xl rounded-br-2xl 
+                     hover:from-teal-400 hover:to-blue-400 transition-all shadow-md"
+            >
+              {report}
+            </button>
+          ))}
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
 
       {/* Data Table Section */}
       <div className="min-h-screen bg-gradient-to-r from-blue-200 to-teal-200  text-gray-900">
